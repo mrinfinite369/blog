@@ -1,0 +1,213 @@
+body {
+  overflow: hidden;
+  font-family: Futura, Helvetica, Arial, sans-serif;
+}
+
+#space {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #141414;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -moz-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+#space.started {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: none;
+}
+#space.started #start {
+  display: none;
+}
+#space.started #spaceship {
+  display: block;
+}
+#space.hit {
+  background: #341414;
+  -moz-box-shadow: inset 0 0 50px rgba(255, 0, 0, 0.6);
+  -webkit-box-shadow: inset 0 0 50px rgba(255, 0, 0, 0.6);
+  box-shadow: inset 0 0 50px rgba(255, 0, 0, 0.6);
+}
+
+h1 {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  font-size: 48px;
+  line-height: 1;
+  margin: 0;
+  color: green;
+}
+h1#livesCount {
+  left: auto;
+  right: 2%;
+  color: red;
+}
+
+#start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25%;
+  margin-top: -60px;
+  font-size: 60px;
+  line-height: 120px;
+  width: 50%;
+  text-align: center;
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+#start:hover {
+  background: #cc0000;
+}
+
+#spaceship {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  bottom: 50px;
+  left: 50%;
+  width: 40px;
+  height: 50px;
+  border-right: 10px solid #cc0000;
+  background: #ff0000;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+#spaceship:before, #spaceship:after {
+  left: 0;
+}
+#spaceship:before {
+  top: -25px;
+  border-bottom: 25px solid #cc0000;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
+#spaceship:after {
+  top: -20px;
+  border-bottom: 20px solid #ff0000;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+}
+#spaceship .wing {
+  float: left;
+  position: relative;
+  left: -10px;
+  top: 40px;
+  width: 10px;
+  height: 20px;
+  background: #ff0000;
+}
+#spaceship .wing + .wing {
+  float: right;
+  left: 20px;
+  background: #cc0000;
+}
+#spaceship .flames {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#spaceship .flames:before, #spaceship .flames:after {
+  border-top: 25px solid rgba(255, 135, 40, 0.7);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+#spaceship .flames:before {
+  left: 10px;
+}
+#spaceship .flames:after {
+  left: 20px;
+}
+#spaceship .flames.burn:before, #spaceship .flames.burn:after {
+  border-top: 28px solid rgba(255, 100, 0, 0.7);
+}
+
+.lazer {
+  position: absolute;
+  bottom: 51px;
+  width: 8px;
+  height: 8px;
+  background: #12f812;
+  -moz-transition: bottom 0.666s linear;
+  -o-transition: bottom 0.666s linear;
+  -webkit-transition: bottom 0.666s linear;
+  transition: bottom 0.666s linear;
+}
+.lazer.shot {
+  bottom: 100%;
+}
+
+.enemy {
+  position: absolute;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  -moz-transition: top 4s linear;
+  -o-transition: top 4s linear;
+  -webkit-transition: top 4s linear;
+  transition: top 4s linear;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.enemy.moving {
+  top: 100%;
+}
+.enemy.exploding {
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  background: red;
+  width: 60px;
+  height: 60px;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+
+.star {
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  -moz-transition: -moz-transform 2s linear;
+  -o-transition: -o-transform 2s linear;
+  -webkit-transition: -webkit-transform 2s linear;
+  transition: transform 2s linear;
+}
+.star.fast {
+  -moz-transition: -moz-transform 2.5s linear;
+  -o-transition: -o-transform 2.5s linear;
+  -webkit-transition: -webkit-transform 2.5s linear;
+  transition: transform 2.5s linear;
+}
+.star.shooting {
+  -moz-transform: translate3d(0, 1200px, 0);
+  -ms-transform: translate3d(0, 1200px, 0);
+  -webkit-transform: translate3d(0, 1200px, 0);
+  transform: translate3d(0, 1200px, 0);
+}
+
+#spaceship:before, #spaceship:after, #spaceship .flames:before, #spaceship .flames:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
