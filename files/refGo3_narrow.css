@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+
+/*----------------------------------------INTERFACE STYLES----------------------------------------*/
+
+
+#mainBody {
+	height: auto;
+	margin: 0 auto;
+	max-width: 600px;
+	padding: 5px 15px 20px 15px;
+	width: 80%;
+} 
+
+
+#mainBody .formArea {
+	margin-top: 20px;
+	width: 90%;
+}
+
+#mainBody #shadow {
+	display: none;
+}
+
+/*----------------------------------------NAVIGATION----------------------------------------*/
+
+/*----------------------------------------FOOTER----------------------------------------*/
+
+/*----------------------------------------TEXT STYLES----------------------------------------*/
+
+#mainBody h1 {
+	font-size: 20px;
+	text-align: center;
+}
+
+#mainBody h2 {
+	font-size: 16px;
+}
+
+#mainBody h3 {
+	font-size: 14px;
+}
+
+#mainBody .loadingCopy {
+	font-size: 14px;
+}
+
+/*----------------------------------------FORM ELEMENTS----------------------------------------*/

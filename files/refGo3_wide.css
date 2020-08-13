@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+
+/*----------------------------------------INTERFACE STYLES----------------------------------------*/
+
+#mainBody {
+	height: auto;
+	min-height: 300px;
+	padding: 10px 25px 10px 25px;
+	max-width: 740px;
+	width: 100%;
+}
+
+
+#mainBody .formArea {
+	margin-top: 20px;
+}
+
+/*----------------------------------------NAVIGATION----------------------------------------*/
+
+/*----------------------------------------FOOTER----------------------------------------*/
+
+/*----------------------------------------TEXT STYLES----------------------------------------*/
+
+#mainBody h1 {
+	font-size: 29px;
+	text-align: center;
+}
+
+#mainBody h2 {
+	font-size: 20px;
+	
+}
+
+#mainBody h3 {
+	font-size: 16px;
+}
+
+#mainBody .loadingCopy {
+	font-size: 18px;
+}
+
+/*----------------------------------------FORM ELEMENTS----------------------------------------*/
